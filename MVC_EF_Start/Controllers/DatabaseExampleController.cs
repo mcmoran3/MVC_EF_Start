@@ -87,8 +87,8 @@ namespace MVC_EF_Start.Controllers
             await dbContext.SaveChangesAsync();
 
             // DELETE operation
-            dbContext.Companies.Remove(CompanyRead1);
-            await dbContext.SaveChangesAsync();
+          //  dbContext.Companies.Remove(CompanyRead1);
+          //  await dbContext.SaveChangesAsync();
 
             return View();
         }
