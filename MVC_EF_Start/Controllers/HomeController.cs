@@ -1,11 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MVC_EF_Start.Models;
+using Newtonsoft.Json;
 using System;
 using System.Net.Http;
 
 namespace MVC_EF_Start.Controllers
 {
-  public class HomeController : Controller
-  {
+    public class HomeController : Controller
+    {
 
         HttpClient httpClient;
 
@@ -29,7 +31,7 @@ namespace MVC_EF_Start.Controllers
             string NATIONAL_PARK_API_PATH = BASE_URL; // + "/parks?limit=20";
             string parksData = "";
 
-          //  Parks parks = null;
+            Parks parks = null;
 
             httpClient.BaseAddress = new Uri(NATIONAL_PARK_API_PATH);
 
@@ -50,11 +52,11 @@ namespace MVC_EF_Start.Controllers
                 if (!parksData.Equals(""))
                 {
                     // JsonConvert is part of the NewtonSoft.Json Nuget package
-                 //   parks = JsonConvert.DeserializeObject<Parks>(parksData);
+                    parks = JsonConvert.DeserializeObject<Parks>(parksData);
                 }
 
-              //  dbContext.Parks.Add(parks);
-               // await dbContext.SaveChangesAsync();
+                //  dbContext.Parks.Add(parks);
+                // await dbContext.SaveChangesAsync();
             }
             catch (Exception e)
             {
@@ -64,8 +66,12 @@ namespace MVC_EF_Start.Controllers
 
             return View();
         }
-    
-    
-    
-  }
+
+    }
 }
+
+
+
+
+
+
