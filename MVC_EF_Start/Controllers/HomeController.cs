@@ -67,6 +67,13 @@ namespace MVC_EF_Start.Controllers
             return View(parks);
         }
 
+
+        public IActionResult aboutus()
+        {
+          
+            return View();
+        }
+
     }
 }
 
