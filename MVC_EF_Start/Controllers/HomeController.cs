@@ -64,7 +64,7 @@ namespace MVC_EF_Start.Controllers
                 Console.WriteLine(e.Message);
             }
 
-            return View();
+            return View(parks);
         }
 
     }

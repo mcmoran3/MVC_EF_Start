@@ -1,6 +1,4 @@
-﻿@{
-    Layout = null;
-}
+﻿@model MVC_EF_Start.Models.Parks
 
 <!DOCTYPE html>
 
@@ -11,5 +9,10 @@
 </head>
 <body>
   <h2>Hello World!</h2>
+    @foreach(MVC_EF_Start.Models.Result park in Model.results)
+            {
+        @(park.committee_id)
+            }
+
 </body>
 </html>
