@@ -1,0 +1,21 @@
+﻿@model MVC_EF_Start.Models.Parks
+
+
+
+
+
+ 
+        <table>
+            <tr class="table-tr-header">
+                <td align="center" class=""># Ped</td>
+                <td align="center" class="">Line</td>
+
+            </tr>
+             @foreach (MVC_EF_Start.Models.Result park in Model.results)
+            {
+        <tr>
+            <td align="center"> @(park.committee_id)</td>
+            <td align="center"> @(park.designation)</td>
+        </tr>
+            }
+        </table>
