@@ -86,6 +86,18 @@ namespace MVC_EF_Start.Controllers
             return View();
         }
 
+        public IActionResult contributionbyind()
+        {
+
+            return View();
+        }
+
+        public IActionResult donutchart()
+        {
+
+            return View();
+        }
+
     }
 }
 
