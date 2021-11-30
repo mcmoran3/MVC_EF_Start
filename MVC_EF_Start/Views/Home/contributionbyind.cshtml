@@ -1,0 +1,149 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Federal Election Commission </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        table.GeneratedTable {
+            width: 60%;
+            background-color: #ffffff;
+            border-collapse: collapse;
+            border-width: 2px;
+            border-color: blue;
+            border-style: double;
+            color: #000000;
+        }
+
+            table.GeneratedTable td, table.GeneratedTable th {
+                border-width: 2px;
+                border-color: blue;
+                border-style: double;
+                padding: 3px;
+            }
+
+            table.GeneratedTable thead {
+                background-color: #3ab72a;
+            }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('img/fec.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center bottom;
+        }
+
+        /* Style the side navigation */
+        .sidenav {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+        }
+
+
+            /* Side navigation links */
+            .sidenav a {
+                color: white;
+                padding: 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                /* Change color on hover */
+                .sidenav a:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+
+        /* Style the content */
+        .content {
+            margin-left: 200px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidenav">
+        <a href="http://mcmoran3.myweb.usf.edu/index.html">Home </a>
+        <a href="http://mcmoran3.myweb.usf.edu/candidatemaster.html">Candidate Information</a>
+        <a href="http://mcmoran3.myweb.usf.edu/contributionbyind.html">Individual Contribution to Committee Information </a>
+        <a href="http://mcmoran3.myweb.usf.edu/committeetocandidate.html">Committee to Candidate Information</a>
+        <a href="http://mcmoran3.myweb.usf.edu/aboutus.html">About Us</a>
+    </div>
+
+    <div class="content">
+        <h2>Federal Election Commission</h2>
+        <p>Below shows all the data related to individuals who have dontated to specific committees</p>
+        If there is a record missing or you want to add a record of data please click add:<br />
+
+
+        <button type="button"
+                id="updateButton"
+                class="btn btn-primary"
+                onclick="Update();">
+            Add
+        </button>
+    </div>
+    <table style="margin-left: auto; margin-right: auto;" class="GeneratedTable">
+        <thead>
+            <tr>
+                <th>Committee ID /Name </th>
+                <th>Individual Name</th>
+                <th>Individual State</th>
+                <th>Individual Occupation</th>
+                <th>Transaction Amount</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>C00255877</td>
+                <td>KNABJIAN	 DENISE</td>
+                <td>IL</td>
+                <td>MANAGING DIRECTOR</td>
+                <td>3000</td>
+            </tr>
+            <tr>
+                <td>C00255878</td>
+                <td>JAMSHED	 SAQIB</td>
+                <td>TX</td>
+                <td>EXECUTIVE DIRECTOR</td>
+                <td>6000</td>
+            </tr>
+            <tr>
+                <td>C00255879</td>
+                <td>RICE	 PAUL</td>
+                <td>TX</td>
+                <td>OPERATIONS MANAGER</td>
+                <td>1000</td>
+            </tr>
+            <tr>
+                <td>C00255810</td>
+                <td>HANSEN	 MICHAEL</td>
+                <td>FL</td>
+                <td>MANAGER</td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td>C00255811</td>
+                <td>CHATONEY	 THOMAS B</td>
+                <td>GA</td>
+                <td>ENTRY LEVEL APPRENTICE</td>
+                <td>2000</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+
+
