@@ -27,7 +27,7 @@ namespace MVC_EF_Start.Controllers
         {
             // CREATE operation
             Company MyCompany = new Company();
-            MyCompany.Id = "MCOB";
+            MyCompany.Id = "MCObbbbB";
             MyCompany.name = "ISM";
             MyCompany.date = "ISM";
             MyCompany.isEnabled = true;
