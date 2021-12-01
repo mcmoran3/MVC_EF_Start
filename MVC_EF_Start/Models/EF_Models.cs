@@ -33,6 +33,13 @@ namespace MVC_EF_Start.Models
         public Company Company { get; set; }
     }
 
+    public class Test
+    {
+        public int Id { get; set; }
+        public string date { get; set; }
+        public Company Company { get; set; }
+    }
+
     public class ChartRoot
     {
         public Quote[] chart { get; set; }
