@@ -13,7 +13,7 @@ namespace MVC_EF_Start.Controllers
 
         static string BASE_URL = "https://api.open.fec.gov/v1/committees/?sort_hide_null=false&page=1&per_page=20&api_key=";
 
-    //    static string BASE_URLCommittee = "https://api.open.fec.gov/v1/committees/?sort_hide_null=false&page=1&per_page=20&api_key=";
+    //    static string BASE_URLCommittee = "https://api.open.fec.gov/v1/candidates/?sort_hide_null=false&page=1&per_page=20&api_key=";
         static string API_KEY = "fZn1U5g0yNRjFfXNiDUs6oX0ciYldCwYSffwpJVD"; //Add your API key here inside ""
 
         //static string BASE_URL = "https://data.cdc.gov/api/views/hk9y-quqm/rows.json";
