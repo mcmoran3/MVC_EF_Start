@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model MVC_EF_Start.Models.Parks 
+< !DOCTYPE html >
 <html lang="en">
 <head>
     <title>Federal Election Commission </title>
@@ -107,41 +108,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>H0AK00105</td>
-                <td>LAMB	THOMAS</td>
-                <td>DEM </td>
-                <td>2020 </td>
-                <td>Alabama</td>
-            </tr>
-            <tr>
-                <td>H0AK00106</td>
-                <td>HENRY	GUY</td>
-                <td>REP </td>
-                <td>2018 </td>
-                <td>Florida </td>
-            </tr>
-            <tr>
-                <td>H0AK00107</td>
-                <td>SMITH ADAM</td>
-                <td>DEM </td>
-                <td>2018 </td>
-                <td>Alabama</td>
-            </tr>
-            <tr>
-                <td>H0AK00108</td>
-                <td>COREY JOHN</td>
-                <td>REP</td>
-                <td>2018 </td>
-                <td>Colorado</td>
-            </tr>
-            <tr>
-                <td>H0AK00109</td>
-                <td>SMITH JOHN</td>
-                <td>DEM </td>
-                <td>2020 </td>
-                <td>Alabama</td>
-            </tr>
+            @foreach (MVC_EF_Start.Models.Result park in Model.results)
+            {
+                <tr>
+                    <td align="center"> @(park.candidate_ids)</td>
+                    <td align="center"> @(park.name)</td>
+                    <td align="center"> @(park.party)</td>
+                    <td align="center"> @(park.last_file_date)</td>
+                    <td align="center"> @(park.state)</td>
+                </tr>
+            }
         </tbody>
     </table>
 </body>

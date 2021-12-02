@@ -14,6 +14,7 @@ namespace MVC_EF_Start.Models
 
     public class Result
     {
+      
         public string committee_id { get; set; }
         public object sponsor_candidate_ids { get; set; }
         public int[] cycles { get; set; }
