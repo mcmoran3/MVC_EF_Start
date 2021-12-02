@@ -10,7 +10,10 @@ namespace MVC_EF_Start.DataAccess
     public DbSet<Company> Companies { get; set; }
     public DbSet<Quote> Quotes { get; set; }
 
-    public DbSet<Test> Tests { get; set; }
+        public DbSet<Candidate_Master> Candidate_Masters { get; set; }
+        public DbSet<Committee_Master> Committee_Masters { get; set; }
+        public DbSet<ContributionByIndividual> ContributionByIndividuals { get; set; }
+        public DbSet<ContributionByCommittee> ContributionByCommittees { get; set; }
 
     }
 }
