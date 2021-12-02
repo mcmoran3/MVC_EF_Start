@@ -33,11 +33,48 @@ namespace MVC_EF_Start.Models
         public Company Company { get; set; }
     }
 
-    public class Test
+    public class Candidate_Master  
     {
         public int Id { get; set; }
-        public string date { get; set; }
-        public Company Company { get; set; }
+        public string name { get; set; }
+        public string party { get; set; }
+
+        public string year { get; set; }
+        public string state { get; set; }
+        //  public Company party { get; set; }
+    }
+
+    public class Committee_Master
+    {
+        public int Id { get; set; }
+        public string Date { get; set; }
+        public string Amount { get; set; }
+
+        public string Memo { get; set; }
+        public string CandidateID  { get; set; }
+   
+    }
+
+    public class ContributionByIndividual
+    {
+        public int CommitteeID { get; set; }
+        public string IndividualName { get; set; }
+        public string State { get; set; }
+
+        public string Occupation { get; set; }
+        public string Amount { get; set; }
+
+    }
+
+    public class ContributionByCommittee
+    {
+        public int CommitteeID { get; set; }
+        public string TransactionDate { get; set; }
+        public string Amount { get; set; }
+
+        public string Memo { get; set; }
+        public int CandidateID  { get; set; }
+
     }
 
     public class ChartRoot
