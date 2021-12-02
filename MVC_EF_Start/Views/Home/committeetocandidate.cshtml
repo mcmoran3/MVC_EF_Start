@@ -103,54 +103,27 @@
         <br />
         <p> If you would like to see visuals related to candidate contributions, please click <a href="http://mcmoran3.myweb.usf.edu/donutchart.html">here.</a> </p>
     </div>
-    <table style="margin-left: 220px; margin-right: auto; width: 51%; height: 357px;" class="GeneratedTable">
+    <table style="margin-left: auto; margin-right: auto;" class="GeneratedTable">
         <thead>
             <tr>
-                <th> Committee ID / Name </th>
-                <th>Transaction Date</th>
-                <th>Transaction Amount</th>
-                <th>Memo Text </th>
-                <th>Candidate ID / Name</th>
+                <th>Candidate ID</th>
+                <th>Candidate Name</th>
+                <th>Party Affiliation </th>
+                <th>Year of Election</th>
+                <th>Candidate State</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>C00000059 //HALLMARK CARDS PAC </td>
-
-                <td>12242020</td>
-                <td>2000 </td>
-                <td>For Upcoming Election </td>
-                <td><a href="http://mcmoran3.myweb.usf.edu/candidatemaster.html"> S0GA00526</a></td>
-                <!--    Here we will build a function to take the candidate ID and pass it to the Url to find it in the candidate master data page-->
-            </tr>
-            <tr>
-                <td>C00000422 /	AMERICAN MEDICAL ASSOCIATION POLITICAL ACTION COMMITTEE</td>
-                <td>12242020</td>
-                <td>20000 </td>
-                <td>For Upcoming Re-Election </td>
-                <td>S0GA00527</td>
-            </tr>
-            <tr>
-                <td>C00000547 /	KANSAS MEDICAL SOCIETY POLITICAL ACTION COMMITTEE</td>
-                <td>12252020</td>
-                <td>250 </td>
-                <td> </td>
-                <td>S0GA00528</td>
-            </tr>
-            <tr>
-                <td>C00000059 / HALLMARK CARDS PAC</td>
-                <td>12262020</td>
-                <td>2000 </td>
-                <td>For Upcoming Election </td>
-                <td>S0GA00529</td>
-            </tr>
-            <tr>
-                <td>C00000547/	KANSAS MEDICAL SOCIETY POLITICAL ACTION COMMITTEE</td>
-                <td>12272020</td>
-                <td>2000 </td>
-                <td>Annual Donation </td>
-                <td>S0GA00530</td>
-            </tr>
+            @foreach (MVC_EF_Start.Models.Result park in Model.results)
+            {
+                <tr>
+                    <td align="center"> @(park.ID)</td>
+                    <td align="center"> @(park.name)</td>
+                    <td align="center"> @(park.party)</td>
+                    <td align="center"> @(park.last_file_date)</td>
+                    <td align="center"> @(park.state)</td>
+                </tr>
+            }
         </tbody>
     </table>
 </body>
