@@ -57,7 +57,7 @@ namespace MVC_EF_Start.Models
 
     public class ContributionByIndividual
     {
-        public int CommitteeID { get; set; }
+        public int Id { get; set; }
         public string IndividualName { get; set; }
         public string State { get; set; }
 
@@ -68,7 +68,7 @@ namespace MVC_EF_Start.Models
 
     public class ContributionByCommittee
     {
-        public int CommitteeID { get; set; }
+        public int Id { get; set; }
         public string TransactionDate { get; set; }
         public string Amount { get; set; }
 
