@@ -1,0 +1,27 @@
+﻿@model MVC_EF_Start.Models.Test.Test
+
+
+
+
+
+
+<table>
+    <tr class="table-tr-header">
+        <td align="center" class="">Candidate ID</td>
+        <td align="center" class="">Name</td>
+        <td align="center" class="">Party Affliation </td>
+        <td align="center" class="">Year of Election </td>
+        <td align="center" class="">Candidate State </td>
+    </tr>
+    @foreach (MVC_EF_Start.Models.Test.Result park in Model.results)
+    {
+        <tr>
+            <td align="center"> @(park.contributor_occupation)</td>
+            <td align="center"> @(park.contributor_occupation)</td>
+            <td align="center"> @(park.contributor_occupation)</td>
+            <td align="center"> @(park.contributor_occupation)</td>
+            <td align="center"> @(park.contributor_occupation)</td>
+        </tr>
+    }
+</table>
+
