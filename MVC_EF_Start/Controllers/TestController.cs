@@ -70,8 +70,13 @@ namespace MVC_EF_Start.TestControllers
             return View(parks);
         }
 
+        public IActionResult donutchart()
+        {
 
-       
+            return View();
+        }
+
+
         public IActionResult committeetocandidate()
         {
 
