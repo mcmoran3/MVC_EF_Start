@@ -87,7 +87,6 @@
         <a href="~/Home/candidatemaster">Candidate Information</a>
         <a href="~/Test/Index">Individual Contribution to Committee Information </a>
         <a href="~/Test/committeetocandidate">Committee to Candidate Information</a>
-        <a href="~/Test/donutchart">Api data visual</a>
         <a href="~/Home/aboutus">About Us</a>
     </div>
 
@@ -103,8 +102,8 @@
         </button>
         <br />
         <br />
-        <p> If you would like to see visuals related to candidate contributions, please click <a href="~/Home/donutchart">here.</a> </p>
-    </div>
+        <p> If you would like to see visuals related to candidate contributions, please click <a href="~/Test/donutchart">here.</a> </p>
+    </div>       
     <table style="margin-left: auto; margin-right: auto;" class="GeneratedTable">
         <thead>
             <tr>
@@ -119,13 +118,13 @@
         <tbody>
             @foreach (MVC_EF_Start.Models.Test.Result park in Model.results)
             {
-            <tr>
-                <td align="center"> @(park.committee_id)</td>
-                <td align="center"> @(park.two_year_transaction_period)</td>
-                <td align="center"> @(park.contribution_receipt_amount)</td>
-                <td align="center"> @(park.sub_id))</td>
-                <td align="center"> @(park.link_id)</td>
-            </tr>
+                <tr>
+                    <td align="center"> @(park.committee_id)</td>
+                    <td align="center"> @(park.two_year_transaction_period)</td>
+                    <td align="center"> @(park.contribution_receipt_amount)</td>
+                    <td align="center"> @(park.sub_id))</td>
+                    <td align="center"> @(park.link_id)</td>
+                </tr>
             }
         </tbody>
     </table>
