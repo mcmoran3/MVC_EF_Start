@@ -107,23 +107,24 @@
     <table style="margin-left: auto; margin-right: auto;" class="GeneratedTable">
         <thead>
             <tr>
-                <th>CommitteeName/ ID</th>
-                <th>Transaction Date</th>
-                <th>Transaction Amount </th>
+                <th>Committee ID</th>
+                <th>Committee Name </th>
+                <th>Committee Type </th>
                 <th>Memo / Text</th>
                 <th>CandidateName / ID </th>
             </tr>
         </thead>
+         public string[] candidate_ids { get; set; }
         <tbody>
             @foreach (MVC_EF_Start.Models.Result park in Model.results)
             {
-                <tr>
-                    <td align="center"> @(park.committee_id)</td>
-                    <td align="center"> @(park.name)</td>
-                    <td align="center"> @(park.party)</td>
-                    <td align="center"> @(park.last_file_date)</td>
-                    <td align="center"> @(park.state)</td>
-                </tr>
+            <tr>
+                <td align="center"> @(park.committee_id)</td>
+                <td align="center"> @(park.name)</td>
+                <td align="center"> @(park.committee_type)</td>
+                <td align="center"> @(park.name)</td>
+                <td align="center"> @(park.candidate_id)</td>
+            </tr>
             }
         </tbody>
     </table>

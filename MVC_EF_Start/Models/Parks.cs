@@ -106,7 +106,7 @@ namespace MVC_EF_Start.Models
         public string committee_id { get; set; }
         public int[] election_years { get; set; }
 
-     
+       
         public string[] election_districts { get; set; }
         public string office { get; set; }
     

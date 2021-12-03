@@ -38,7 +38,7 @@ namespace MVC_EF_Start.Models.Test
         public object memo_code { get; set; }
         public object candidate_office_full { get; set; }
         public string report_type { get; set; }
-        public object candidate_name { get; set; }
+        public string candidate_name { get; set; }
         public string filing_form { get; set; }
         public string amendment_indicator { get; set; }
         public string schedule_type_full { get; set; }

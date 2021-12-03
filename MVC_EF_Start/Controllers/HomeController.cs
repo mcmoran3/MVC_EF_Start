@@ -13,7 +13,7 @@ namespace MVC_EF_Start.Controllers
 
         static string BASE_URL = "https://api.open.fec.gov/v1/candidates/?sort=candidate_id&page=1&sort_nulls_last=true&per_page=20&candidate_status=C&api_key=";
 
-        static string BASE_URLCommittee = "https://api.open.fec.gov/v1/committees/?sort_hide_null=false&page=1&sort_nulls_last=true&per_page=20&api_key=";
+        static string BASE_URLCommittee = "https://api.open.fec.gov/v1/committees/?sort=name&sort_null_only=false&page=1&sort_nulls_last=false&per_page=20&api_key=";
         static string BASE_URLInd = "https://api.open.fec.gov/v1/schedules/schedule_a/?contributor_type=individual&two_year_transaction_period=2020&sort_null_only=false&sort_hide_null=false&sort=-contribution_receipt_date&per_page=20&api_key=";
         static string API_KEY = "fZn1U5g0yNRjFfXNiDUs6oX0ciYldCwYSffwpJVD"; //Add your API key here inside ""
 
@@ -73,7 +73,7 @@ namespace MVC_EF_Start.Controllers
 
         public IActionResult aboutus()
         {
-          
+
             return View();
         }
 
@@ -87,7 +87,7 @@ namespace MVC_EF_Start.Controllers
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-            string NATIONAL_PARK_API_PATH = BASE_URL  +"&is_active_candidate=true&sort_hide_null=false"; // adding in parameter
+            string NATIONAL_PARK_API_PATH = BASE_URL + "&is_active_candidate=true&sort_hide_null=false"; // adding in parameter
             string parksData = "";
 
             Parks parks = null;
@@ -135,7 +135,7 @@ namespace MVC_EF_Start.Controllers
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-            string NATIONAL_PARK_API_PATH = BASE_URLCommittee; // + "/parks?limit=20";
+            string NATIONAL_PARK_API_PATH = BASE_URLCommittee + "&sort_hide_null=false";
             string parksData = "";
 
             Parks parks = null;
@@ -236,3 +236,44 @@ namespace MVC_EF_Start.Controllers
 
 
 
+
+public class Rootobject
+{
+    public string api_version { get; set; }
+    public Pagination pagination { get; set; }
+    public Result[] results { get; set; }
+}
+
+public class Pagination
+{
+    public int per_page { get; set; }
+    public int count { get; set; }
+    public int page { get; set; }
+    public int pages { get; set; }
+}
+
+public class Result
+{
+    public string name { get; set; }
+    public string committee_id { get; set; }
+    public string affiliated_committee_name { get; set; }
+    public string state { get; set; }
+    public string party { get; set; }
+    public string last_file_date { get; set; }
+    public string treasurer_name { get; set; }
+    public string committee_type_full { get; set; }
+    public int[] cycles { get; set; }
+    public string first_f1_date { get; set; }
+    public string last_f1_date { get; set; }
+    public string[] candidate_ids { get; set; }
+    public string organization_type_full { get; set; }
+    public string committee_type { get; set; }
+    public string first_file_date { get; set; }
+    public object[] sponsor_candidate_list { get; set; }
+    public string party_full { get; set; }
+    public string filing_frequency { get; set; }
+    public string organization_type { get; set; }
+    public string designation_full { get; set; }
+    public object sponsor_candidate_ids { get; set; }
+    public string designation { get; set; }
+}

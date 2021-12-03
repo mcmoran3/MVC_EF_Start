@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@model MVC_EF_Start.Models.Test.Test  
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Federal Election Commission </title>
@@ -31,10 +32,12 @@
         }
 
         body {
-            background-image: url('../img/fec.png');
-            background-repeat: no-repeat;
+            background-image: url('../img/ComboFEC.JPG');
+            
             background-attachment: fixed;
-            background-position: center bottom;
+            background-position: right;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
         }
 
         /* Style the side navigation */
@@ -69,6 +72,12 @@
             margin-left: 200px;
             padding-left: 20px;
         }
+
+        .auto-style1 {
+            height: 94px;
+            width: 458px;
+            margin-top: 35px;
+        }
     </style>
 </head>
 <body>
@@ -83,42 +92,42 @@
 
     <div class="content">
         <h2>Federal Election Commission</h2>
-        <p>Below shows all the data related to individuals who have dontated to specific committees</p>
-        If there is a record missing or you want to add a record of data please click add:<br />
-
-
+        <p class="auto-style1">Below shows all the data related to committees who have dontated to candidates running for office</p>
+        If you would like to delete a record please click delete:<br />
         <button type="button"
                 id="updateButton"
                 class="btn btn-primary"
-                onclick="Update();">
-            Add
+                onclick="Delete();">
+            Delete
         </button>
+        <br />
+        <br />
+        <p> If you would like to see visuals related to candidate contributions, please click <a href="~/Home/donutchart">here.</a> </p>
     </div>
     <table style="margin-left: auto; margin-right: auto;" class="GeneratedTable">
         <thead>
             <tr>
-                <th>Committee ID /Name </th>
-                <th>Individual Name</th>
-                <th>Individual State</th>
-                <th>Individual Occupation</th>
-                <th>Transaction Amount</th>
-
+                <th>Committee ID</th>
+                <th> Transaction Year </th>
+                <th>Transaction Amount </th>
+                <th>Transaction Number </th>
+                <th>Candidate Link/ ID </th>
             </tr>
         </thead>
-        <tbody>    
+
+        <tbody>
             @foreach (MVC_EF_Start.Models.Test.Result park in Model.results)
             {
-                <tr>
-                    <td align="center"> @(park.committee_id)</td>
-                    <td align="center"> @(park.contributor_name)</td>
-                    <td align="center"> @(park.contributor_state)</td>
-                    <td align="center"> @(park.contributor_occupation)</td>
-                    <td align="center"> @(park.contribution_receipt_amount)</td>
-                </tr>
+            <tr>
+                <td align="center"> @(park.committee_id)</td>
+                <td align="center"> @(park.two_year_transaction_period)</td>
+                <td align="center"> @(park.contribution_receipt_amount)</td>
+                <td align="center"> @(park.sub_id))</td>
+                <td align="center"> @(park.link_id)</td>
+            </tr>
             }
         </tbody>
     </table>
 </body>
 </html>
-
 
