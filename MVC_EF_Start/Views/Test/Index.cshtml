@@ -1,27 +1,124 @@
-﻿@model MVC_EF_Start.Models.Test.Test
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Federal Election Commission </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        table.GeneratedTable {
+            width: 60%;
+            background-color: #ffffff;
+            border-collapse: collapse;
+            border-width: 2px;
+            border-color: blue;
+            border-style: double;
+            color: #000000;
+        }
+
+            table.GeneratedTable td, table.GeneratedTable th {
+                border-width: 2px;
+                border-color: blue;
+                border-style: double;
+                padding: 3px;
+            }
+
+            table.GeneratedTable thead {
+                background-color: #3ab72a;
+            }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('img/fec.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center bottom;
+        }
+
+        /* Style the side navigation */
+        .sidenav {
+            height: 100%;
+            width: 200px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+        }
 
 
+            /* Side navigation links */
+            .sidenav a {
+                color: white;
+                padding: 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                /* Change color on hover */
+                .sidenav a:hover {
+                    background-color: #ddd;
+                    color: black;
+                }
+
+        /* Style the content */
+        .content {
+            margin-left: 200px;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidenav">
+        <a href="~/Home/Index">Home </a>
+        <a href="~/Home/candidatemaster">Candidate Information</a>
+        <a href="~/Test/Index">Individual Contribution to Committee Information </a>
+        <a href="~/Home/committeetocandidate">Committee to Candidate Information</a>
+        <a href="~/Home/aboutus">About Us</a>
+    </div>
+
+    <div class="content">
+        <h2>Federal Election Commission</h2>
+        <p>Below shows all the data related to individuals who have dontated to specific committees</p>
+        If there is a record missing or you want to add a record of data please click add:<br />
 
 
+        <button type="button"
+                id="updateButton"
+                class="btn btn-primary"
+                onclick="Update();">
+            Add
+        </button>
+    </div>
+    <table style="margin-left: auto; margin-right: auto;" class="GeneratedTable">
+        <thead>
+            <tr>
+                <th>Committee ID /Name </th>
+                <th>Individual Name</th>
+                <th>Individual State</th>
+                <th>Individual Occupation</th>
+                <th>Transaction Amount</th>
 
+            </tr>
+        </thead>
+        <tbody>    
+            @foreach (MVC_EF_Start.Models.Test.Result park in Model.results)
+            {
+                <tr>
+                    <td align="center"> @(park.committee_id)</td>
+                    <td align="center"> @(park.contributor_name)</td>
+                    <td align="center"> @(park.contributor_state)</td>
+                    <td align="center"> @(park.contributor_occupation)</td>
+                    <td align="center"> @(park.contribution_receipt_amount)</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
 
-<table>
-    <tr class="table-tr-header">
-        <td align="center" class="">Candidate ID</td>
-        <td align="center" class="">Name</td>
-        <td align="center" class="">Party Affliation </td>
-        <td align="center" class="">Year of Election </td>
-        <td align="center" class="">Candidate State </td>
-    </tr>
-    @foreach (MVC_EF_Start.Models.Test.Result park in Model.results)
-    {
-        <tr>
-            <td align="center"> @(park.contributor_occupation)</td>
-            <td align="center"> @(park.contributor_occupation)</td>
-            <td align="center"> @(park.contributor_occupation)</td>
-            <td align="center"> @(park.contributor_occupation)</td>
-            <td align="center"> @(park.contributor_occupation)</td>
-        </tr>
-    }
-</table>
 

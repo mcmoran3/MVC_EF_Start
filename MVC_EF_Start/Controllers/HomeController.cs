@@ -11,9 +11,9 @@ namespace MVC_EF_Start.Controllers
 
         HttpClient httpClient;
 
-        static string BASE_URL = "https://api.open.fec.gov/v1/candidates/?sort_hide_null=false&page=10&per_page=20&api_key=";
+        static string BASE_URL = "https://api.open.fec.gov/v1/candidates/?sort_hide_null=false&page=100&sort_nulls_last=true&per_page=20&api_key=";
 
-        static string BASE_URLCommittee = "https://api.open.fec.gov/v1/committees/?sort_hide_null=false&page=1&per_page=20&api_key=";
+        static string BASE_URLCommittee = "https://api.open.fec.gov/v1/committees/?sort_hide_null=false&page=1&sort_nulls_last=true&per_page=20&api_key=";
         static string BASE_URLInd = "https://api.open.fec.gov/v1/schedules/schedule_a/?contributor_type=individual&two_year_transaction_period=2020&sort_null_only=false&sort_hide_null=false&sort=-contribution_receipt_date&per_page=20&api_key=";
         static string API_KEY = "fZn1U5g0yNRjFfXNiDUs6oX0ciYldCwYSffwpJVD"; //Add your API key here inside ""
 

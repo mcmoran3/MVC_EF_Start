@@ -1,4 +1,4 @@
-﻿@model MVC_EF_Start.Models.Parks 
+﻿@model MVC_EF_Start.Models.Parks
 < !DOCTYPE html >
 <html lang="en">
 <head>
@@ -33,8 +33,7 @@
 
         body {
             margin: 0;
-            background-image: url('img/fec.png');
-            background-repeat: no-repeat;
+            background-image: url('../img/fec.png');
             background-attachment: fixed;
             background-position: center bottom;
         }
@@ -79,7 +78,7 @@
 
         <a href="~/Home/Index">Home </a>
         <a href="~/Home/candidatemaster">Candidate Information</a>
-        <a href="~/Home/contributionbyind">Individual Contribution to Committee Information </a>
+        <a href="~/Test/Index">Individual Contribution to Committee Information </a>
         <a href="~/Home/committeetocandidate">Committee to Candidate Information</a>
         <a href="~/Home/aboutus">About Us</a>
     </div>
@@ -111,7 +110,7 @@
             @foreach (MVC_EF_Start.Models.Result park in Model.results)
             {
                 <tr>
-                    <td align="center"> @(park.ID)</td>
+                    <td align="center"> @(park.committee_id)</td>
                     <td align="center"> @(park.name)</td>
                     <td align="center"> @(park.party)</td>
                     <td align="center"> @(park.last_file_date)</td>
