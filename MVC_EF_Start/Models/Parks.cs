@@ -102,7 +102,16 @@ namespace MVC_EF_Start.Models
     public class Result
     {
         public int ID { get; set; }
+        public string candidate_id { get; set; }
         public string committee_id { get; set; }
+        public int[] election_years { get; set; }
+
+     
+        public string[] election_districts { get; set; }
+        public string office { get; set; }
+    
+        public bool candidate_inactive { get; set; }
+
         public object sponsor_candidate_ids { get; set; }
         public int[] cycles { get; set; }
         public string treasurer_name { get; set; }

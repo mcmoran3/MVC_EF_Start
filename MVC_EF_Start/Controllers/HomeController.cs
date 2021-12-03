@@ -11,7 +11,7 @@ namespace MVC_EF_Start.Controllers
 
         HttpClient httpClient;
 
-        static string BASE_URL = "https://api.open.fec.gov/v1/candidates/?sort_hide_null=false&page=100&sort_nulls_last=true&per_page=20&api_key=";
+        static string BASE_URL = "https://api.open.fec.gov/v1/candidates/?sort=candidate_id&page=1&sort_nulls_last=true&per_page=20&candidate_status=C&api_key=";
 
         static string BASE_URLCommittee = "https://api.open.fec.gov/v1/committees/?sort_hide_null=false&page=1&sort_nulls_last=true&per_page=20&api_key=";
         static string BASE_URLInd = "https://api.open.fec.gov/v1/schedules/schedule_a/?contributor_type=individual&two_year_transaction_period=2020&sort_null_only=false&sort_hide_null=false&sort=-contribution_receipt_date&per_page=20&api_key=";
@@ -87,7 +87,7 @@ namespace MVC_EF_Start.Controllers
             httpClient.DefaultRequestHeaders.Accept.Add(
                 new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-            string NATIONAL_PARK_API_PATH = BASE_URL; // + "/parks?limit=20";
+            string NATIONAL_PARK_API_PATH = BASE_URL  +"&is_active_candidate=true&sort_hide_null=false"; // adding in parameter
             string parksData = "";
 
             Parks parks = null;
