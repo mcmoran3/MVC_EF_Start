@@ -73,7 +73,7 @@ namespace MVC_EF_Start.Models
         public string Amount { get; set; }
 
         public string Memo { get; set; }
-        public int CandidateID  { get; set; }
+        public string CandidateID  { get; set; }
 
     }
 

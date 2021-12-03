@@ -1,40 +1,40 @@
 ﻿
-
+@model MVC_EF_Start.Models.Test.Result
 <!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="utf-8" />
-    <title>Data Visuals </title>
+    <title>Chart.js examples</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
 </head>
 <body>
-    <h1>Contributions to Candidate </h1>
+    <h1> Bar chart example</h1>
 
-    <canvas id="doughnutchartexample" width="300" height="150"></canvas>
+    <canvas id="barchartexample" width="800" height="450"></canvas>
 
     <script>
-        new Chart(document.getElementById("doughnutchartexample"), {
-            type: 'doughnut',
-            data: {
-                labels: ["KNABIJAN", "JAMSHED", "RICE", "HANSEN", "CHATONEY"],
-                datasets: [
-                    {
-                        label: "Sum of dollars contributed",
-                        backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f", "#e8c3b9", "#c45850"],
-                        data: [3000, 6000, 1000, 5000, 2000]
-                    }
-                ]
-            },
-            options: {
-                legend: { display: false },
-                title: {
-                    display: true,
-                    text: 'Contributions by Individuals'
-                }
-            }
-        });
+    new Chart(document.getElementById("barchartexample"), {
+      type: 'bar',
+      data: {
+        labels: [@Html.Raw(@Model.committee_id)],
+        datasets: [
+          {
+            label: "Population (millions)",
+
+            data: [@Model.contribution_receipt_amount]
+          }
+        ]
+      },
+      options: {
+        legend: { display: false },
+        title: {
+          display: true,
+          text: 'test'
+        }
+      }
+    });
     </script>
 </body>
 </html>

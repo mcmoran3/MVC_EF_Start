@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MVC_EF_Start.Models;
 using MVC_EF_Start.Models.Test;
 using Newtonsoft.Json;
 using System;
@@ -82,7 +83,7 @@ namespace MVC_EF_Start.TestControllers
             string NATIONAL_PARK_API_PATH = BASE_URLInd; // + "/parks?limit=20";
             string parksData = "";
 
-            Test parks = null;
+            Models.Test.Result parks = null;
 
             httpClient.BaseAddress = new Uri(NATIONAL_PARK_API_PATH);
 
@@ -103,7 +104,7 @@ namespace MVC_EF_Start.TestControllers
                 if (!parksData.Equals(""))
                 {
                     // JsonConvert is part of the NewtonSoft.Json Nuget package
-                    parks = JsonConvert.DeserializeObject<Test>(parksData);
+                    parks = JsonConvert.DeserializeObject<Models.Test.Result>(parksData);
                 }
 
                 //  dbContext.Parks.Add(parks);
